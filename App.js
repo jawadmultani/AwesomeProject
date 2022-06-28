@@ -9,7 +9,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Open up App.js to start working on your my test App!</Text>
+      <Text style={styles.myText}>Open up App.js to start working on your my test App!</Text>
       <Image style={styles.myImage} source={{ width: 200, height: 300, uri: "https://picsum.photos/200/300" }} />
 
       <Button
@@ -29,9 +29,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    color: ""
   },
 
   myImage: {
     marginTop: 30
+  },
+
+  myText: {
+    color: "#FF0000",
+    fontSize: 18,
+    textAlign: 'center'
   }
 });
