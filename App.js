@@ -1,44 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, Image, Button } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-  const onPressLearnMore = () => {
-    console.log('I am clicked');
-  }
-
+function HomeScreen() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.myText}>Open up App.js to start working on your my test App!</Text>
-      <Image style={styles.myImage} source={{ width: 200, height: 300, uri: "https://picsum.photos/200/300" }} />
-
-      <Button
-        onPress={onPressLearnMore}
-        title="Click Mee"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: ""
-  },
+function AboutScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
 
-  myImage: {
-    marginTop: 30
-  },
+const Stack = createNativeStackNavigator();
 
-  myText: {
-    color: "#FF0000",
-    fontSize: 18,
-    textAlign: 'center'
-  }
-});
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default App;
